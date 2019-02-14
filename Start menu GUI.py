@@ -48,11 +48,11 @@ def main():
 ##    
 ##    window.blit(beginner, (100,100))
     
-    b1 = self.createButton("Beginner")
-    b2 = self.createButton("Intermediate")
-    
-
-    buttons = [b1,b2,b3]
+##    b1 = self.createButton("Beginner")
+##    b2 = self.createButton("Intermediate")
+##    
+##
+##    buttons = [b1,b2,b3]
     running = True
     while running:
         for event in pygame.event.get():
