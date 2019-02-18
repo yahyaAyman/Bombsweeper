@@ -11,7 +11,7 @@ class Tile:
     @param int bomb_num: Represents the number of bombs around this tile.
 
     """
-    def __init__(self, bomb, defused = False, clicked = False, bomb_num):
+    def __init__(self, bomb, bomb_num, defused = False, clicked = False):
         self.bomb = bomb
         self.defused = defused
         self.clicked = clicked
@@ -41,10 +41,10 @@ class Tile:
     def get_bomb_num():
         return self.bomb_num
 
-   """Sets the number of bombs around this tile."""
+    """Sets the number of bombs around this tile."""
     def set_bomb_num(bomb_num):
         self.bomb_num = bomb_num
 
-   """Sets whether this tile has been click or not."""
+    """Sets whether this tile has been click or not."""
     def click():
         self.clicked = True
