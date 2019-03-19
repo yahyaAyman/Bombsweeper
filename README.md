@@ -20,3 +20,7 @@ Use the flag button to flag tiles that you know are bombs.
 If a tile is labled "1" and there is already a tile within the radius that is known to be a bomb, then all the others are safe and can be clicked.
 
 If a tile contains a number "n" and there are only "n" remaining covered tiles within the radius, then all tile can be flagged and counted as a bomb.
+
+# License
+
+Licensed under [MIT License](https://tasdikrahman.mit-license.org/)
