@@ -13,7 +13,7 @@ class Board:
     def generate_bombs(self):
         """ Generates (length-1)*(width-1) bombs randomly in the grid
         """
-        for i in range((self.row-1)*(self.column-1)):
+        for i in range((self.row-1)*(self.column-1) // 5):
             column = random.randint(0, self.column-1)
             row = random.randint(0, self.row-1)
             if not self.grid[row][column].bomb:
