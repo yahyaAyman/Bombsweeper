@@ -44,7 +44,7 @@ def main():
 
     ##putting all the text on window together
     pygame.display.flip()
-
+    counter = 0
     ##game loop
     while play:
         for event in pygame.event.get():
@@ -64,7 +64,7 @@ def main():
                     window.blit(intermediate,intermediate_pos )
                     window.blit(professional,  professional_pos)
                     pygame.display.flip()
-                    counter = 1
+                    counter += 1
 
                 if mouseX >= 120 and mouseX <= 206 and counter == 1 and mouseY >= 156 and mouseY <= 168:
                     print("beginner")
