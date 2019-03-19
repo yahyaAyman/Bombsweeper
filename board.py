@@ -38,108 +38,18 @@ class Board:
     def count_bomb_perimeter(self):
         """Check the amount of bombs around the perimeter for each tile
         """
-        for i in range(self.row):
-            for j in range(self.column):
+        #inspired by the tutorial
+        xdim = self.row
+        ydim = self.column
+        for i in range(xdim):
+            for j in range(ydim):
                 count = 0 #represents number of bombs around a given tile
-                if i == 0 and j == 0 and not self.grid[i][j].bomb:
-                    if self.grid[i][j+1].bomb:
-                        count+=1
-                    if self.grid[i+1][j+1].bomb:
-                        count+=1
-                    if self.grid[i+1][j].bomb:
-                        count+=1
-                    self.grid[i][j].bomb_num = count
-                elif j == 0 and i == self.row-1 and not self.grid[i][j].bomb:
-                    if self.grid[i-1][j].bomb:
-                        count+=1
-                    if self.grid[i-1][j+1].bomb:
-                        count+=1
-                    if self.grid[i][j+1].bomb:
-                        count+=1
-                    self.grid[i][j].bomb_num = count                    
-                elif j == 0 and not self.grid[i][j].bomb:
-                    print(str(i) +str(self.row)+" "+ str(j))
-                    if self.grid[i][j+1].bomb:
-                        count+=1
-                    if self.grid[i+1][j+1].bomb:
-                        count+=1
-                    if self.grid[i+1][j].bomb:
-                        count+=1
-                    if self.grid[i-1][j].bomb:
-                        count+=1
-                    if self.grid[i-1][j+1].bomb:
-                        count+=1
-                    self.grid[i][j].bomb_num = count
-                elif j == self.column-1 and i == 0 and not self.grid[i][j].bomb:
-                    if self.grid[i][j-1].bomb:
-                        count+=1
-                    if self.grid[i+1][j-1].bomb:
-                        count+=1
-                    if self.grid[i+1][j].bomb:
-                        count+=1
-                    self.grid[i][j].bomb_num = count   
-                elif j == self.column-1 and i == self.row-1 and not self.grid[i][j].bomb:
-                    if self.grid[i-1][j].bomb:
-                        count+=1
-                    if self.grid[i-1][j-1].bomb:
-                        count+=1
-                    if self.grid[i][j-1].bomb:
-                        count+=1
-                    self.grid[i][j].bomb_num = count                   
-                elif j == self.column-1 and not self.grid[i][j].bomb:
-                    if self.grid[i][j-1].bomb:
-                        count+=1
-                    if self.grid[i+1][j].bomb:
-                        count+=1
-                    if self.grid[i+1][j-1].bomb:
-                        count+=1
-                    if self.grid[i-1][j].bomb:
-                        count+=1
-                    if self.grid[i-1][j-1].bomb:
-                        count+=1
-                    self.grid[i][j].bomb_num = count
-                elif i == 0 and not self.grid[i][j].bomb:
-                    if self.grid[i][j-1].bomb:
-                        count+=1
-                    if self.grid[i][j+1].bomb:
-                        count+=1
-                    if self.grid[i+1][j].bomb:
-                        count+=1
-                    if self.grid[i+1][j-1].bomb:
-                        count+=1
-                    if self.grid[i+1][j+1].bomb:
-                        count+=1     
-                    self.grid[i][j].bomb_num = count
-                elif i == self.row-1 and not self.grid[i][j].bomb:
-                    if self.grid[i][j-1].bomb:
-                        count+=1
-                    if self.grid[i][j+1].bomb:
-                        count+=1
-                    if self.grid[i-1][j].bomb:
-                        count+=1
-                    if self.grid[i-1][j-1].bomb:
-                        count+=1
-                    if self.grid[i-1][j+1].bomb:
-                        count+=1     
-                    self.grid[i][j].bomb_num = count
-                elif not self.grid[i][j].bomb:
-                    if self.grid[i][j-1].bomb:
-                        count+=1
-                    if self.grid[i][j+1].bomb:
-                        count+=1
-                    if self.grid[i+1][j].bomb:
-                        count+=1
-                    if self.grid[i+1][j-1].bomb:
-                        count+=1
-                    if self.grid[i+1][j+1].bomb:
-                        count+=1     
-                    if self.grid[i-1][j].bomb:
-                        count+=1
-                    if self.grid[i-1][j-1].bomb:
-                        count+=1
-                    if self.grid[i-1][j+1].bomb:
-                        count+=1
-                    self.grid[i][j].bomb_num = count 
+                for dx in (-1, 0, 1):
+                    for dy in (-1, 0, 1):
+                        if (0 <= i + dx < xdim) and (0 <= j + dy < ydim) and self.grid[i+dx][j+dy].bomb:
+                            count += 1
+                self.grid[i][j].bomb_num = count
+                
                     
 if __name__ == '__main__':
     #TESTING PURPOSES
