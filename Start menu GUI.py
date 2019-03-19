@@ -55,15 +55,27 @@ def main():
             
             if event.type ==  pygame.MOUSEBUTTONUP:
                 mouseX, mouseY = pygame.mouse.get_pos()
-##                print(str(mouseX) + " and " + str(mouseY))
+                print("X: " + str(mouseX) + " and Y:  " + str(mouseY))
 ##                print(str(beginner_pos[0]) +" and "+ str(beginner_pos[1]))
-                if (mouseX >= (options_pos[0] and 120) )and (mouseY <= (options_pos[1] and 400)):
+                if (mouseX >= 102 and mouseX <= 419)and (mouseY >=112 and mouseY <= 130):
                     window.blit(background,(0,0))
                     window.blit(options, options_pos)
                     window.blit(beginner,beginner_pos)
                     window.blit(intermediate,intermediate_pos )
                     window.blit(professional,  professional_pos)
                     pygame.display.flip()
+                    counter = 1
+
+                if mouseX >= 120 and mouseX <= 206 and counter == 1 and mouseY >= 156 and mouseY <= 168:
+                    print("beginner")
+
+                if mouseX >= 120 and mouseX<= 244 and counter == 1 and mouseY >= 187 and mouseY <= 198:
+                    print("Intermediate")
+
+                if mouseX>= 120 and mouseX <= 240 and counter == 1 and mouseY >=215 and mouseY <=230:
+                    print("Professional")
+
+    
 
 if __name__ == '__main__':
     main()
