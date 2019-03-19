@@ -50,7 +50,13 @@ class Board:
                             count += 1
                 self.grid[i][j].bomb_num = count
                 
-                    
+    def __str__(self):
+        for i in range(row):
+            for j in range(column):
+                print("Row: " + str(i) + ", Column: " + str(j) + ", Has Bomb: " + str(x.grid[i][j].bomb)\
+                      + ", Bomb in perimeter: " + str(x.grid[i][j].bomb_num) + ", clicked: " + str (x.grid[i][j].clicked))
+        return "board __str__"
+                   
 if __name__ == '__main__':
     #TESTING PURPOSES
     #edit row and column to make that grid size
