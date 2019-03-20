@@ -62,6 +62,8 @@ python -m pip install pygame
 python -m pygame.examples.aliens
 
 ```
+# Authors
+Davinder Jangra, Kyle Jang, Yahya Ayman, Daniel Costantino, and Hani Ghasempoor
 
 # License
 
