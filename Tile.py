@@ -18,33 +18,36 @@ class Tile:
         self.bomb_num = bomb_num
 
     """ Returns whether this tile is a bomb or not."""
-    def get_bomb():
+    def get_bomb(self):
         return self.bomb
 
     """ Sets whether this tile is a bomb or not."""
-    def set_bomb(is_bomb):
+    def set_bomb(self, is_bomb):
         self.bomb = is_bomb
 
     """Returns whether this tile has been defused or not."""
-    def get_defused():
+    def get_defused(self):
         return self.defused
 
     """Sets whether this tile has been defused or not."""
-    def set_defused(is_defused):
+    def set_defused(self, is_defused):
         self.defused = is_defused
 
     """Returns whether this tile has been clicked or not."""
-    def get_clicked():
+    def get_clicked(self):
         return self.clicked
 
     """Returns the number of bombs around this tile."""
-    def get_bomb_num():
+    def get_bomb_num(self):
         return self.bomb_num
 
     """Sets the number of bombs around this tile."""
-    def set_bomb_num(bomb_num):
+    def set_bomb_num(self, bomb_num):
         self.bomb_num = bomb_num
 
     """Sets whether this tile has been click or not."""
-    def click():
-        self.clicked = True
+    def click(self):
+        if self.clicked:
+            self.clicked = False
+        else:
+            self.clicked = True
