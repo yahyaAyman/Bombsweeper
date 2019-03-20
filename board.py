@@ -18,6 +18,21 @@ class Board:
             row = random.randint(0, self.row-1)
             if not self.grid[row][column].get_bomb():
                 self.grid[row][column].set_bomb(True)
+
+
+    def defuse_tile(self, row, column):
+        if self.grid[row][column].get_clicked():
+            if not self.grid[row][column].get_defused():
+                return -2
+            else:
+                self.grid[row][column].set_defused(False)
+                self.grid[row][column].click()
+                return 0
+        else:
+            self.grid[row][column].set_defused(True)
+            self.grid[row][column].click()
+            return 1
+
                 
     def click_tile(self, row, column):
         if self.grid[row][column].get_clicked():
