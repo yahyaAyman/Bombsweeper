@@ -1,6 +1,6 @@
 # Bombsweeper
 
-How to Play:
+## How to Play 
 
 Bombsweeper contains the same rules as the classic minesweeper game.  The objective of the game is to clear all the non bomb tiles from the board so only the tiles containing a bomb remain.
 
@@ -13,7 +13,7 @@ The flag button allows the user to place a flag on tiles that they know to be a 
 
 The game finishes and the player wins if the only remaining tiles on the board contain bombs.
 
-Tips: 
+## Tips
 
 Use the flag button to flag tiles that you know are bombs.
 
@@ -22,7 +22,7 @@ If a tile is labled "1" and there is already a tile within the radius that is kn
 If a tile contains a number "n" and there are only "n" remaining covered tiles within the radius, then all tile can be flagged and counted as a bomb.
 
 # Installation
-For Windows:
+## For Windows:
 1. Download Python 3.6 [here](https://www.python.org/downloads/release/python-368/)
 2. Pick the appropriate version for your PC and install it. Make sure the "Add python 3.6 to PATH" option selected so so that pip will work for you from the command line.
 3. Type this in command line:
@@ -38,7 +38,7 @@ python3 -m pygame.examples.aliens
 
 ```
 
-For Mac:
+## For Mac:
 1. Download Python 3.6 [here](https://www.python.org/downloads/release/python-368/)
 2. Pick the appropriate version for your PC and install it. 
 3. Create a virtualenv called 'anenv' and use it:
