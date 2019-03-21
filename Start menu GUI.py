@@ -91,7 +91,9 @@ def main():
                     return playGame(difficulty)
 
                 if mouseX>= 120 and mouseX <= 240 and counter == 1 and mouseY >=215 and mouseY <=230:
-                    print("Pro")
+                    difficulty = "Professional Difficulty"
+                    counter+= 1
+                    return playGame(difficulty)
 
 
                 if mouseX >= 102 and mouseX <=168 and counter ==1 and mouseY >= 340 and mouseY <= 357:
