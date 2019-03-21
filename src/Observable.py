@@ -1,15 +1,13 @@
 class Observable:
-    
+    observers = []
     def __init__(self):
-        self.observers = []
-    
+        self.observers = observers
     def attach(self, observer):
-        if observer not in self.observers:
-            self.observers.append(observer)
+        self.observers.append(observer)
         
-    def detach(observer):
+    def detach(self, observer):
         self.observers.remove(observer)
         
-    def notify_Observers():
-        for observer in observers:
-            observer.update(self)
+    def notify_Observers(self, grid):
+        for observer in self.observers:
+            observer.update(grid)
