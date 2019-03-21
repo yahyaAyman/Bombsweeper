@@ -86,7 +86,9 @@ def main():
                     return playGame(difficulty)
                 
                 if mouseX >= 120 and mouseX<= 244 and counter == 1 and mouseY >= 187 and mouseY <= 198:
-                    print("Beginner")
+                    difficulty = "Intermediate Difficulty"
+                    counter+=1
+                    return playGame(difficulty)
 
                 if mouseX>= 120 and mouseX <= 240 and counter == 1 and mouseY >=215 and mouseY <=230:
                     print("Pro")
