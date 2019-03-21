@@ -114,10 +114,11 @@ $ git clone https://github.com/jangra99/Bombsweeper.git
 # Directory Structure
 - `src` contains all the Python source code. 
     - `img` contains the custom sprites used in the game as well as the homepage background image.
+- `Screenshots` contains all the screenshots jsed in README.md.
 - `README.md` contains license information, author information, and screenshots of the game. It also explains how to play the game and how to install the game.
 - `Classes.md` contains information about all the major classes that were used to create the game and has explanations of important class methods.
 - `Extensions.md` contains information about extensions that can be added into the game and how to implement them.
-- `License.md` contains information of the MIT License.
+- `LICENSE.md` contains information of the MIT License.
 # Authors
 Davinder Jangra, Kyle Jang, Yahya Ayman, Daniel Costantino, and Hani Ghasempoor.
 
