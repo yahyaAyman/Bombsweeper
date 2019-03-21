@@ -109,8 +109,15 @@ $ git clone https://github.com/jangra99/Bombsweeper.git
 4. Navigate to where you cloned the repo.
 5. Go into the src folder and run Start menu GUI.py.
 6. Enjoy the game!
+# Directory Structure
+- `src` contains all the Python source code. 
+    - `img` contains the custom sprites used in the game as well as the homepage background image.
+- `README.md` contains license information, author information, and screenshots of the game. It also explains how to play the game and how to install the game.
+- `Classes.md` contains information about all the major classes that were used to create the game and has explanations of important class methods.
+- `Extensions.md` contains information about extensions that can be added into the game and how to implement them.
+- `License.md` contains information of the MIT License.
 # Authors
-Davinder Jangra, Kyle Jang, Yahya Ayman, Daniel Costantino, and Hani Ghasempoor
+Davinder Jangra, Kyle Jang, Yahya Ayman, Daniel Costantino, and Hani Ghasempoor.
 
 # License
 
