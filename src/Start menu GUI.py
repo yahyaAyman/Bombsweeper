@@ -20,7 +20,7 @@ width_window = 700
 
 window = pygame.display.set_mode((width_window,height_window))
 pygame.display.set_caption ("BombSweeper")
-background = pygame.image.load("bomb.jpeg")
+background = pygame.image.load("img/bomb.jpeg")
 background= pygame.transform.scale(background, (750,750))
 window.blit(background, (0,0))
 options_pos = (100,100)
