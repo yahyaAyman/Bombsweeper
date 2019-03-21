@@ -1,17 +1,19 @@
 import pygame
 from pygame import *
 import os
+import math
 import sys
 from Observer import *
 from board import *
 from Tile import *
+import time
 pygame.init()
 
 WIDTH= 58
 HEIGHT = 58
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
-GREEN = (200, 79, 90)
+GREEN = (0, 128, 0)
 RED = (255, 0, 0)
 MARGIN = 10
 
@@ -118,16 +120,27 @@ class View(Observer):
     def playGame(self, difficulty):
         clock = pygame.time.Clock()
         pygame.display.set_caption(difficulty)
-        grid = []
+
+        game_board = Board(10,10)
+        game_board.generate_bombs()
+        game_board.count_bomb_perimeter()
+        game_board.attach(self)
+        print(game_board)
+        """
+        grid = []x
     
         for row in range(10):    
             grid.append([])
             for column in range(10):
                 grid[row].append(0)  
-    
+        """
         done = False
+        window.fill(BLACK)
+        for row in range(10):
+            for column in range(10):
+                pygame.draw.rect(window, WHITE, [(MARGIN + WIDTH) * column + MARGIN,(MARGIN + HEIGHT) * row + MARGIN, WIDTH, HEIGHT])
         while not done:
-            window.fill(BLACK)
+            #window.fill(BLACK)
             for event in pygame.event.get():  
                 if event.type == pygame.QUIT:  
                     done = True  
@@ -140,26 +153,44 @@ class View(Observer):
                     column = pos[0] // (WIDTH + MARGIN)
                     row = pos[1] // (HEIGHT + MARGIN)
                     # Set that location to one
-                    grid[row][column] = 1
+                    #grid[row][column] = 1
+                    game_board.grid[row][column].position_x = pos[1]
+                    game_board.grid[row][column].position_y = pos[0]
+                    game_board.click_tile(row, column)
+                    print(game_board)
                     print("Click ", pos, "Grid coordinates: ", row, column)
 
-            
-
-            for row in range(10):
-                for column in range(10):
-                    color = WHITE
-                    if grid[row][column] == 1:
-                        color = GREEN
-                        pygame.draw.rect(window, color, [(MARGIN + WIDTH) * column + MARGIN,(MARGIN + HEIGHT) * row + MARGIN, WIDTH, HEIGHT])
-                    else:
-                        pygame.draw.rect(window, color, [(MARGIN + WIDTH) * column + MARGIN,(MARGIN + HEIGHT) * row + MARGIN, WIDTH, HEIGHT])
-
-                    
-                
+                         
             clock.tick(30)
             pygame.display.flip()
             pygame.display.update()
-        
+            
+    def update(self, game_board):
+        window.fill(BLACK)
+        for row in range(10):
+            for column in range(10):
+                color = WHITE
+                if game_board.grid[row][column].get_clicked() and game_board.grid[row][column].get_bomb():
+                    color = RED
+                    pygame.draw.rect(window, color, [(MARGIN + WIDTH) * column + MARGIN,(MARGIN + HEIGHT) * row + MARGIN, WIDTH, HEIGHT])
+                    #If bomb is clicked, show all other bombs.
+                    for row2 in range(10):
+                        for column2 in range(10):
+                            if game_board.grid[row2][column2].get_bomb():
+                                game_board.click_tile(row2, column2)
+                    #time.sleep(3)
+                    #pygame.quit()
+                elif game_board.grid[row][column].get_clicked():
+                    color = GREEN
+                    pygame.draw.rect(window, color, [(MARGIN + WIDTH) * column + MARGIN,(MARGIN + HEIGHT) * row + MARGIN, WIDTH, HEIGHT])
+                    main_options_font = pygame.font.SysFont("arialblack", 25)
+                    options = main_options_font.render( str(game_board.grid[row][column].get_bomb_num()),1, RED)
+                    window.blit(options, ((MARGIN + WIDTH) * column + MARGIN,(MARGIN + HEIGHT) * row + MARGIN)  )
+                else:
+                    pygame.draw.rect(window, color, [(MARGIN + WIDTH) * column + MARGIN,(MARGIN + HEIGHT) * row + MARGIN, WIDTH, HEIGHT])
+
+                    
+           
 
 if __name__ == '__main__':
     x = View()
