@@ -37,8 +37,9 @@ $ py -m pip install -U pygame --user
 $ git clone https://github.com/jangra99/Bombsweeper.git
 
 ```
-5. Navigate to where you cloned this repo and run Start menu GUI.py.
-6. Enjoy the game!
+5. Navigate to where you cloned the repo.
+6. Go into the src folder and run Start menu GUI.py.
+7. Enjoy the game!
 ## For Mac:
 1. Open a command terminal.
 2. Install Homebrew and prepare it for use.
@@ -82,8 +83,9 @@ $ sudo pip3 install hg+http://bitbucket.org/pygame/pygame
 $ git clone https://github.com/jangra99/Bombsweeper.git
 
 ```
-8. Navigate to where you cloned this repo and run Start menu GUI.py.
-9. Enjoy the game!
+8. Navigate to where you cloned the repo.
+9. Go into the src folder and run Start menu GUI.py.
+10. Enjoy the game!
 ## For Linux:
 1. Open a terminal window, then install python by entering the following commands:
 ```
@@ -104,8 +106,9 @@ $ sudo apt-get install python-pygame.
 $ git clone https://github.com/jangra99/Bombsweeper.git
 
 ```
-4. Navigate to where you cloned this repo and run Start menu GUI.py.
-5. Enjoy the game!
+4. Navigate to where you cloned the repo.
+5. Go into the src folder and run Start menu GUI.py.
+6. Enjoy the game!
 # Authors
 Davinder Jangra, Kyle Jang, Yahya Ayman, Daniel Costantino, and Hani Ghasempoor
 
