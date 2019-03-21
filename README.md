@@ -28,40 +28,84 @@ If a tile contains a number "n" and there are only "n" remaining covered tiles w
 3. Type this in command line:
 ```
 
-py -m pip install -U pygame --user
+$ py -m pip install -U pygame --user
 
 ```
-4. To verify that pygame works, try running the included game:
+4. Clone this github repo.
 ```
 
-python3 -m pygame.examples.aliens
+$ git clone https://github.com/jangra99/Bombsweeper.git
 
 ```
-
+5. Navigate to where you cloned this repo and run Start menu GUI.py.
+6. Enjoy the game!
 ## For Mac:
-1. Download Python 3.6 [here](https://www.python.org/downloads/release/python-368/)
-2. Pick the appropriate version for your PC and install it. 
-3. Create a virtualenv called 'anenv' and use it:
+1. Open a command terminal.
+2. Install Homebrew and prepare it for use.
 ```
 
-python3 -m virtualenv anenv
-. ./anenv/bin/activate
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ echo export PATH='/usr/local/bin:$PATH' >> ~/.bash_profile
+$ brew update
+$ brew doctor
 
 ```
-4. Run this command so the pygame window can get focus.
+3. Install Python 3.
 ```
 
-python -m pip install venvdotapp
-venvdotapp
-python -m pip install pygame
+$ brew install python3
 
 ```
-5. To verify that pygame works, try running the included game:
+4. Install Mercurial.
 ```
 
-python -m pygame.examples.aliens
+$ brew install mercurial
 
 ```
+5. Install all the dependencies for Pygame.
+```
+
+$ brew install sdl sdl_image sdl_mixer sdl_ttf portmidi
+$ brew tap homebrew/headonly
+$ brew install --HEAD smpeg
+
+```
+6. Install pygame.
+```
+
+$ sudo pip3 install hg+http://bitbucket.org/pygame/pygame
+
+```
+7. Clone this github repo.
+```
+
+$ git clone https://github.com/jangra99/Bombsweeper.git
+
+```
+8. Navigate to where you cloned this repo and run Start menu GUI.py.
+9. Enjoy the game!
+## For Linux:
+1. Open a terminal window, then install python by entering the following commands:
+```
+
+$ sudo apt-get update
+$ sudo apt-get install python3.6
+
+```
+2. Install pygame.
+```
+
+$ sudo apt-get install python-pygame.
+
+```
+3. Clone this github repo.
+```
+
+$ git clone https://github.com/jangra99/Bombsweeper.git
+
+```
+4. Navigate to where you cloned this repo and run Start menu GUI.py.
+5. Enjoy the game!
 # Authors
 Davinder Jangra, Kyle Jang, Yahya Ayman, Daniel Costantino, and Hani Ghasempoor
 
