@@ -1,7 +1,8 @@
-from Tile import * 
+from Tile import *
+from Observable import *
 import random
 
-class Board:
+class Board(Observable):
     """ Generates a board instance which is filled with tile instances 
     """
 
@@ -39,7 +40,7 @@ class Board:
             return -2
         else:
             self.grid[row][column].click() #Set clicked true for later recursive calls
-            
+            self.notify_Observers(self)
         if self.grid[row][column].get_bomb():             #if bomb was clicked
             return -1
         elif self.grid[row][column].get_bomb_num():       #if labeled tile was clicked
@@ -71,10 +72,10 @@ class Board:
                 self.grid[i][j].set_bomb_num(count)
                     
     def __str__(self):
-        for i in range(row):
-            for j in range(column):
-                print("Row: " + str(i) + ", Column: " + str(j) + ", Has Bomb: " + str(x.grid[i][j].get_bomb())\
-                      + ", Bomb in perimeter: " + str(x.grid[i][j].get_bomb_num()) + ", clicked: " + str (x.grid[i][j].get_clicked()))
+        for i in range(self.row):
+            for j in range(self.column):
+                print("Row: " + str(i) + ", Column: " + str(j) + ", Has Bomb: " + str(self.grid[i][j].get_bomb())\
+                      + ", Bomb in perimeter: " + str(self.grid[i][j].get_bomb_num()) + ", clicked: " + str (self.grid[i][j].get_clicked()))
         return "board __str__"
 
     
