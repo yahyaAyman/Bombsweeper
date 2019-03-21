@@ -86,17 +86,17 @@ class View(Observer):
                     if mouseX >= 120 and mouseX <= 206 and counter == 1 and mouseY >= 156 and mouseY <= 168:
                         difficulty = "Beginner Difficulty"
                         counter +=1
-                        return playGame(difficulty)
+                        return self.playGame(difficulty)
                     
                     if mouseX >= 120 and mouseX<= 244 and counter == 1 and mouseY >= 187 and mouseY <= 198:
                         difficulty = "Intermediate Difficulty"
                         counter+=1
-                        return playGame(difficulty)
+                        return self.playGame(difficulty)
     
                     if mouseX>= 120 and mouseX <= 240 and counter == 1 and mouseY >=215 and mouseY <=230:
                         difficulty = "Professional Difficulty"
                         counter+= 1
-                        return playGame(difficulty)
+                        return self.playGame(difficulty)
     
     
                     if mouseX >= 102 and mouseX <=168 and counter ==1 and mouseY >= 340 and mouseY <= 357:
