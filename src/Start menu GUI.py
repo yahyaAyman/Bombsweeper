@@ -132,11 +132,7 @@ def playGame(difficulty):
                 # Set that location to one
                 grid[row][column] = 1
                 print("Click ", pos, "Grid coordinates: ", row, column)
-##        if grid[row][column] == 1:
-##            color = GREEN
-##            pygame.draw.rect(window, color, [(MARGIN + WIDTH) * column + MARGIN,(MARGIN + HEIGHT) * row + MARGIN, WIDTH, HEIGHT])
-####            pygame.display.flip()
-####            pygame.display.update()
+
             
 
         for row in range(10):
