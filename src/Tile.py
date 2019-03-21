@@ -16,6 +16,8 @@ class Tile:
         self.defused = defused
         self.clicked = clicked
         self.bomb_num = bomb_num
+        self.position_x = 0
+        self.position_y = 0
 
     """ Returns whether this tile is a bomb or not."""
     def get_bomb(self):
