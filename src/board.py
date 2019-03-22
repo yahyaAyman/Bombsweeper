@@ -14,7 +14,7 @@ class Board(Observable):
     def generate_bombs(self):
         """ Generates (length-1)*(width-1) bombs randomly in the grid
         """
-        for i in range((self.row)*(self.column) // 5):
+        for i in range((self.row)*(self.column) // 5): # up to 20% of the tiles
             column = random.randint(0, self.column-1)
             row = random.randint(0, self.row-1)
             if not self.grid[row][column].get_bomb():
@@ -22,15 +22,15 @@ class Board(Observable):
 
 
     def defuse_tile(self, row, column):
-        if self.grid[row][column].get_clicked():
-            if not self.grid[row][column].get_defused():
-                return -2
+        if self.grid[row][column].get_clicked():             #if it has been clicked
+            if not self.grid[row][column].get_defused():        #but not defused
+                return -2                                       #do nothing
             else:
-                self.grid[row][column].set_defused(False)
+                self.grid[row][column].set_defused(False)       #otherwise undo the previous defusing
                 self.grid[row][column].click()
                 return 0
-        else:
-            self.grid[row][column].set_defused(True)
+        else:                                               # if it's not clicked then defuse
+            self.grid[row][column].set_defused(True)        
             self.grid[row][column].click()
             return 1
 
@@ -45,8 +45,7 @@ class Board(Observable):
             return -1
         elif self.grid[row][column].get_bomb_num() > 0:       #if labeled tile was clicked
             return self.grid[row][column].get_bomb_num()
-        else :
-                  
+        else :                              #recurse in the 8 tiles around the blank tile
             R = self.row - 1
             C = self.column -1
             for i in (-1, 0, 1):
