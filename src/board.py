@@ -43,16 +43,17 @@ class Board(Observable):
             self.notify_Observers(self)
         if self.grid[row][column].get_bomb():             #if bomb was clicked
             return -1
-        elif self.grid[row][column].get_bomb_num():       #if labeled tile was clicked
+        elif self.grid[row][column].get_bomb_num() > 0:       #if labeled tile was clicked
             return self.grid[row][column].get_bomb_num()
         else :
+                  
             R = self.row - 1
             C = self.column -1
             for i in (-1, 0, 1):
                 for j in (-1, 0, 1):
-                    if (0 <= i + row < R) and (0 <= j + column < C) and\
+                    if (0 <= i + row <= R) and (0 <= j + column <= C) and\
                        not self.grid[row + i][column + j].get_bomb():
-                        self.click_tile(row + i, row + j)
+                        self.click_tile(row + i, column + j)
         return 0
     
     def count_bomb_perimeter(self):
