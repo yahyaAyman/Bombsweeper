@@ -157,7 +157,7 @@ class View(Observer):
                     game_board.grid[row][column].position_x = pos[1]
                     game_board.grid[row][column].position_y = pos[0]
                     game_board.click_tile(row, column)
-                    print(game_board)
+                    #print(game_board)
                     print("Click ", pos, "Grid coordinates: ", row, column)
 
                          
