@@ -24,3 +24,23 @@
 | `click_tile`<br>`(row, column)` | recursively clicks each tile which does not have a bomb in its perimeter, starting from the given Tile. |
 | `count_bomb_perimeter()` | Checks the amount of bombs around the perimeter for each Tile, and accordingly sets the Tile's attribute. 
 | `defuse_tile`<br>`(row, column)` | Creates a flag on a tile, which makes the Tile unclickable. |
+
+## Tile Class
+### Tile's Variables
+| Variable | Variable Definition |
+|:---------------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ` bomb ` | True if the tile is a bomb, False if it is not a bomb. |
+| ` defused ` | True if the tile is a bomb and is defused, False otherwise. |
+| ` clicked ` | True if thes tile has been clicked on, False otherwise. |
+| ` bomb_num ` | Represents the number of bombs around the tile. |
+### Tile's Functions
+| Function | Function Definition |
+|:--------------------------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `get_bomb(self)` | Returns whether the tile is a bomb or not. |
+| `set_bomb(self, is_bomb) ` | Sets whether the tile is a bomb or not. |
+| `get_defused(self)` | Returns whether the tile has been defused or not. |
+| `set_defused(self, is_defused)` | Sets whether the tile has been defused or not. |
+| `get_clicked(self)` | Returns whether the tile has been clicked or not. |
+| `get_bomb_num(self)` | Returns the number of bombs around the tile. |
+| `set_bomb_num(self, bomb_num)` | Sets the number of bombs around the tile. |
+| `click(self)` | Sets whether the tile has been click or not. |
