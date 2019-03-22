@@ -2,13 +2,24 @@
 
 | Class | Class Description |
 |-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Start menu GUI.py | Generates the view to display the board
 | Observable.py |  Includes all classes to be observed 
 | Observer.py | An object that wishes to be notified when the board changes states. 
 | board.py | Generates a board with the given rows and columns 
 | Tile.py | Generates a tile which is a cell in a grid
-| Start menu GUI.py | Generates the view to display the board
+
 
 ## Classes 
+
+## Start Menu Class
+- `View` contains all the python source code that is responsible for updating of the game view on the start menu and the game while being played
+
+
+| Functions | Function Definition |
+|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| main(self) | Starts the game by notifying the view to update itself |
+|  playGame(self, difficulty)  | Generates the apropriate update of the game to notify the update method |
+| update(self, game_board) | Updates the view of the game as the player interacts with the menu or the game |
 
 ## Board Class
 
