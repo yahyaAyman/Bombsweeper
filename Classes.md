@@ -26,6 +26,12 @@
 - The Board class is used to keep track of the grid and and change the state of the game. 
 - The Board class randomly assigns each Tile a bomb and counts the amount of bombs in the perimeter of each Tile.
 - The class also performs clicks and sets the clicked attribute of the Tile to true if it is clicked.
+### Board's Variables
+| Variable | Variable Definition |
+|:---------------------------:|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `row` | The amount of rows in the grid |
+| `column` | The amount of columns in the grid |
+| `grid` | The grid includes column * row Tiles|
 
 ### Board's Functions 
 
