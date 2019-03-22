@@ -18,7 +18,7 @@
 
 ### Board's Functions 
 
-| Function | Function Definitoin |
+| Function | Function Definition |
 |----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `generate_bombs()` | randolmly assigns certain tiles a bomb. |
 | `click_tile`<br>`(row, column)` | recursively clicks each tile which does not have a bomb in its perimeter, starting from the given Tile. |
